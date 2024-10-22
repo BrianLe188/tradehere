@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import UserAvatar from "@/components/user-avatar";
+import { defaultImage } from "@/constants/default";
 import { product } from "@/constants/products";
 import { mockId } from "@/lib/utils";
 import { MessageCircle, Share2, Star } from "lucide-react";
@@ -23,9 +24,7 @@ export default function Info() {
       <div>
         <div className="aspect-w-4 aspect-h-3 mb-4">
           <Image
-            src={
-              product.images[selectedImage] || require("@/assets/imgs/demo.jpg")
-            }
+            src={product.images[selectedImage] || defaultImage}
             alt={`${product.name} - Image ${selectedImage + 1}`}
             className="rounded-lg object-cover w-full h-full"
             width={500}
@@ -42,7 +41,7 @@ export default function Info() {
               }`}
             >
               <Image
-                src={image || require("@/assets/imgs/demo.jpg")}
+                src={defaultImage}
                 alt={`${product.name} - Thumbnail ${index + 1}`}
                 className="object-cover w-full h-full"
                 height={100}
@@ -62,10 +61,7 @@ export default function Info() {
 
         <Card className="mb-6">
           <CardContent className="flex items-center space-x-4 p-4">
-            <UserAvatar
-              img={require("@/assets/imgs/demo.jpg")}
-              name={product.owner.name}
-            />
+            <UserAvatar img={defaultImage} name={product.owner.name} />
             <div>
               <p className="font-semibold">{product.owner.name}</p>
               <div className="flex items-center">

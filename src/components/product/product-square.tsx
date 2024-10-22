@@ -6,6 +6,7 @@ import Status from "./status";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { type Product } from "@/lib/types/product";
+import { defaultImage } from "@/constants/default";
 
 type Props = {
   data: Product;
@@ -20,7 +21,7 @@ export default memo(function ProductSquare({ data }: Props) {
       >
         {data?.status && <Status status={data.status} />}
         <Image
-          src={require("@/assets/imgs/demo.jpg")}
+          src={defaultImage}
           width={200}
           height={200}
           alt={data.name}

@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import UserAvatar from "@/components/user-avatar";
+import { defaultImage } from "@/constants/default";
 import { useState } from "react";
 
 export default function UserInfo() {
@@ -37,7 +38,7 @@ export default function UserInfo() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <UserAvatar
-              img={require("@/assets/imgs/demo.jpg")}
+              img={defaultImage}
               name={user.name}
               className="h-20 w-20"
             />

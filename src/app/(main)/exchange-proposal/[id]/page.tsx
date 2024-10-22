@@ -7,6 +7,7 @@ import YourOffer from "./components/your-offer";
 import Message from "./components/message";
 import Guide from "./components/guide";
 import Proposals from "./components/exchanges";
+import { defaultImage } from "@/constants/default";
 
 export default function Page() {
   return (
@@ -22,7 +23,7 @@ export default function Page() {
                 <Image
                   width={100}
                   height={100}
-                  src={require("@/assets/imgs/demo.jpg")}
+                  src={defaultImage}
                   alt={desiredItem.name}
                   className="w-20 h-20 object-cover rounded"
                 />

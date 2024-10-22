@@ -1,4 +1,4 @@
-import { mockId } from "@/lib/utils";
+import { defaultImage } from "@/constants/default";
 import Image from "next/image";
 
 export default function Related() {
@@ -7,14 +7,14 @@ export default function Related() {
       <h2 className="text-2xl font-semibold mb-4">Related Items</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {Array.from({ length: 5 })
-          .map(() => ({ id: mockId(), name: "Related item" }))
+          .map((e, index) => ({ id: index.toString(), name: "Related item" }))
           .map((item) => (
             <div
               key={item.id}
               className="bg-card text-card-foreground rounded-lg shadow-md overflow-hidden"
             >
               <Image
-                src={require("@/assets/imgs/demo.jpg")}
+                src={defaultImage}
                 alt={item.name}
                 width={200}
                 height={200}

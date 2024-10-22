@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import UserAvatar from "@/components/user-avatar";
+import { defaultImage } from "@/constants/default";
 import { Star } from "lucide-react";
 
 export default function Review() {
@@ -22,7 +23,7 @@ export default function Review() {
           {/* This is where you would map through the user's reviews */}
           <div className="border-b pb-4">
             <div className="flex items-center space-x-2 mb-2">
-              <UserAvatar img={require("@/assets/imgs/demo.jpg")} name="ANH" />
+              <UserAvatar img={defaultImage} name="ANH" />
               <span className="font-semibold">Jane Smith</span>
               <div className="flex">
                 <Star className="text-yellow-400 w-4 h-4" />

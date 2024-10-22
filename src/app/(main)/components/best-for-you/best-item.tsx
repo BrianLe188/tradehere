@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { defaultImage } from "@/constants/default";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -17,7 +18,7 @@ export default function BestItem({ data }: Props) {
       onMouseLeave={onLeaveHover}
     >
       <Image
-        src={require("@/assets/imgs/demo.jpg")}
+        src={defaultImage}
         width={200}
         height={200}
         alt={data.name}

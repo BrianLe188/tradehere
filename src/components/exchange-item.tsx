@@ -15,6 +15,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import UserAvatar from "@/components/user-avatar";
 import { Check, MessageCircle, X } from "lucide-react";
 import Image from "next/image";
+import { defaultImage } from "@/constants/default";
 
 type Props = {
   exchange: {
@@ -32,8 +33,12 @@ export default memo(function ExchangeItem({
   exchange,
   isPrivate = false,
 }: Props) {
-  const onDecline = (id: string) => {};
-  const onAccept = (id: string) => {};
+  const onDecline = (id: string) => {
+    console.log(id);
+  };
+  const onAccept = (id: string) => {
+    console.log(id);
+  };
   return (
     <Card key={exchange.id} className="mb-6">
       <CardContent className="p-6">
@@ -57,7 +62,7 @@ export default memo(function ExchangeItem({
             <h3 className="font-medium mb-2">Desired Item:</h3>
             <div className="flex items-center space-x-2">
               <Image
-                src={require("@/assets/imgs/demo.jpg")}
+                src={defaultImage}
                 alt={exchange.desiredItem.name}
                 className="w-12 h-12 object-cover rounded"
                 width={100}
@@ -76,7 +81,7 @@ export default memo(function ExchangeItem({
                   className="flex items-center space-x-2 bg-muted p-2 rounded"
                 >
                   <Image
-                    src={require("@/assets/imgs/demo.jpg")}
+                    src={defaultImage}
                     alt={item.name}
                     className="w-8 h-8 object-cover rounded"
                     width={100}

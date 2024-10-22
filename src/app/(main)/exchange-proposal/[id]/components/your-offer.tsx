@@ -10,6 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { defaultImage } from "@/constants/default";
 import { Plus, X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -17,13 +18,13 @@ import { useState } from "react";
 export default function YourOffer() {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
   const myItems = Array.from({ length: 5 }).map((e, index) => ({
-    id: index,
+    id: index.toString(),
     name: "Product with very long name",
   }));
 
   const onToggleItemSelection = (id: string) => {
     setSelectedItems((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
 
@@ -39,7 +40,7 @@ export default function YourOffer() {
                 return (
                   <div key={id} className="relative">
                     <Image
-                      src={require("@/assets/imgs/demo.jpg")}
+                      src={defaultImage}
                       alt={item.name}
                       className="w-full h-32 object-cover rounded"
                       width={100}
@@ -60,7 +61,8 @@ export default function YourOffer() {
             </div>
           ) : (
             <p className="text-muted-foreground">
-              No items selected yet. Click "Add Item" to choose items to offer.
+              No items selected yet. Click &quot;Add Item&quot; to choose items
+              to offer.
             </p>
           )}
         </CardContent>
@@ -89,9 +91,11 @@ export default function YourOffer() {
                 onClick={() => onToggleItemSelection(item.id)}
               >
                 <Image
-                  src={require("@/assets/imgs/demo.jpg")}
+                  src={defaultImage}
                   alt={item.name}
                   className="w-full h-32 object-cover"
+                  width={100}
+                  height={100}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-background/75 p-2">
                   <p className="text-sm font-medium truncate">{item.name}</p>

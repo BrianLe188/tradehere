@@ -10,7 +10,7 @@ export default function Guide() {
         <li>You can offer multiple items for a single item if you wish.</li>
         <li>The other party can accept, decline, or counter your offer.</li>
         <li>
-          Once both parties agree, you'll be able to arrange the exchange
+          Once both parties agree, you&apos;ll be able to arrange the exchange
           details.
         </li>
         <li>Always meet in a safe, public place for in-person exchanges.</li>

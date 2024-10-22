@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { defaultImage } from "@/constants/default";
 
 type Props = {
   img?: string;
@@ -9,9 +10,7 @@ type Props = {
 export default function UserAvatar({ img, name, className }: Props) {
   return (
     <Avatar className={className}>
-      {img && (
-        <AvatarImage src={require("@/assets/imgs/demo.jpg")} alt={name} />
-      )}
+      {img && <AvatarImage src={defaultImage} alt={name} />}
       <AvatarFallback>{name[0].toUpperCase()}</AvatarFallback>
     </Avatar>
   );
